@@ -73,10 +73,10 @@ def init_conversation():
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     vectordb = Chroma(persist_directory=INDEX_PERSIST_DIRECTORY,embedding_function=embeddings)
 
-    # llama2 llm which runs with ollama
+    # phi llm which runs with ollama
     # ollama expose an api for the llam in `localhost:11434`
     llm = Ollama(
-        model="llama2",
+        model="phi3",
         base_url="http://localhost:11434",
         verbose=True,
     )
